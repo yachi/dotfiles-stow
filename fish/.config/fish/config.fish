@@ -5,9 +5,11 @@ set -gx GPG_TTY (tty)
 set -gx GOPATH "$HOME/go"
 set -gx PATH "$GOPATH/bin" $PATH
 
+# editor
+set -gx EDITOR nvim
+
 # fish alias
 source ~/.config/fish/aliases.fish
 
 # fish prompt
 source ~/.config/fish/powerline.fish
-
