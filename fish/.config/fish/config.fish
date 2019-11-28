@@ -13,3 +13,6 @@ source ~/.config/fish/aliases.fish
 
 # fish prompt
 source ~/.config/fish/powerline.fish
+
+# asdf
+source (brew --prefix asdf)/asdf.fish
