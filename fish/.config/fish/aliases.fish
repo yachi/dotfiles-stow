@@ -1,16 +1,23 @@
-alias v 'nvim -o'
+function aalias
+  abbr -a -g -- "$argv[1]" "$argv[2]"
+end
 
-alias g git
-alias gst 'git status'
-alias gc 'git commit -v'
-alias gco 'git checkout'
-alias gca 'git commit -a'
-alias gd 'git diff'
-alias gdc 'git diff --cached'
-alias gp 'git push'
+aalias v 'nvim -o'
 
-alias bi 'bundler install -j256'
-alias bu 'bundler update'
+aalias g git
+aalias gst 'git status'
+aalias gc 'git commit -v'
+aalias gco 'git checkout'
+aalias gca 'git commit -a'
+aalias gd 'git diff'
+aalias gdc 'git diff --cached'
+aalias gp 'git push'
+aalias gup 'git pull --rebase'
+
+aalias bi 'bundler install -j256'
+aalias bu 'bundler update'
+
+aalias gfg 'git ls-files|grep'
 
 function gcob
   git checkout (git for-each-ref --sort=committerdate refs/heads --format='%(refname:short)' | tail -r | fzf --height=30% --reverse --no-mouse)
@@ -26,4 +33,23 @@ end
 
 function gmdd
   git branch --merged | grep -v develop | grep -v master | xargs git branch -d
+end
+
+function rslf
+  git ls-files | grep -E "^spec/.*($argv[1]).*_spec\.rb\$"
+  env RAILS_ENV=test bin/rspec (git ls-files | grep -E "^spec/.*($argv[1]).*_spec\.rb\$")
+end
+
+function gfpp
+  begin
+    set -lx OVERCOMMIT_DISABLE 1
+    for a in {master,develop}
+      git checkout $a; and git push
+    end; and git push --tags
+  end
+end
+
+function gccl
+  git add changelog/unreleased/
+  git commit -va -m '📝  add changelog item'
 end
