@@ -15,4 +15,7 @@ source ~/.config/fish/aliases.fish
 source ~/.config/fish/powerline.fish
 
 # asdf
-source (brew --prefix asdf)/asdf.fish
+switch (uname)
+  case Darwin
+    source (brew --prefix asdf)/asdf.fish
+end
