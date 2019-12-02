@@ -5,6 +5,9 @@ set -gx GPG_TTY (tty)
 set -gx GOPATH "$HOME/go"
 set -gx PATH "$GOPATH/bin" $PATH
 
+# local bin
+set -gx PATH "$HOME/.local/bin" $PATH
+
 # editor
 set -gx EDITOR nvim
 
