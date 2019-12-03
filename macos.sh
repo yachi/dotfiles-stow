@@ -6,3 +6,5 @@ stow neovim
 stow ruby
 
 ./brew.sh
+
+m ntp set time.cloudflare.com
