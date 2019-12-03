@@ -17,6 +17,8 @@ aalias gup 'git pull --rebase'
 aalias bi 'bundler install -j256'
 aalias bu 'bundler update'
 
+aalias dc 'docker-compose'
+
 aalias gfg 'git ls-files|grep'
 
 function gcob
