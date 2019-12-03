@@ -1,4 +1,4 @@
-#/usr/bin/env zsh
+#!/usr/bin/env zsh
 
 brew install \
 	asdf \
@@ -17,7 +17,8 @@ brew install \
 	pwgen \
 	ripgrep \
 	ruby-install \
-	stow
+	stow \
+	tig
 
 brew cask install \
 	docker \
