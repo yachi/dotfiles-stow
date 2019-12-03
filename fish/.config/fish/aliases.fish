@@ -13,13 +13,14 @@ aalias gd 'git diff'
 aalias gdc 'git diff --cached'
 aalias gp 'git push'
 aalias gup 'git pull --rebase'
+aalias gfg 'git ls-files|grep'
+aalias gwip 'git add -A; git ls-files --deleted -z | xargs -0 git rm; git commit -m "wip"'
+aalias gunwip 'git log -n 1 | grep -q -c wip; and git reset HEAD~1'
 
 aalias bi 'bundler install -j256'
 aalias bu 'bundler update'
 
 aalias dc 'docker-compose'
-
-aalias gfg 'git ls-files|grep'
 
 function gcob
   git checkout (git for-each-ref --sort=committerdate refs/heads --format='%(refname:short)' | tail -r | fzf --height=30% --reverse --no-mouse)

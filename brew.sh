@@ -11,6 +11,7 @@ brew install \
 	htop \
 	hub \
 	m-cli \
+	mdcat \
 	neovim \
 	parallel \
 	postgresql \
