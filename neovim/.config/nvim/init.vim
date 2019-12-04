@@ -46,7 +46,7 @@ call plug#end()
 " PlugInstall
 
 set encoding=UTF-8
-set shell=/bin/zsh
+" set shell=/bin/zsh
 colorscheme onehalfdark
 let g:airline_theme = 'onehalfdark'
 let test#strategy = 'basic'
