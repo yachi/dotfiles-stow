@@ -1,5 +1,13 @@
 #!/usr/bin/env fish
 
+# install asdf nodejs
+asdf plugin-add nodejs
+set nodejs_version (asdf list-all nodejs | tail -n 1)
+asdf install nodejs $nodejs_version
+asdf global nodejs $nodejs_version
+sudo pacman -S --noconfirm yarn
+yarn global add neovim
+
 # install vim plug
 test -f ~/.local/share/nvim/site/autoload/plug.vim; or curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
