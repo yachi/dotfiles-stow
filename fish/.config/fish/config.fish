@@ -31,4 +31,6 @@ source ~/.config/fish/powerline.fish
 switch (uname)
   case Darwin
     source (brew --prefix asdf)/asdf.fish
+  case Linux
+    source /opt/asdf-vm/asdf.fish
 end
