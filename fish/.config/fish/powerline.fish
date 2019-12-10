@@ -1,4 +1,4 @@
-which -s powerline-go; or go get -u github.com/justjanne/powerline-go
+command -q -s powerline-go; or go get -u github.com/justjanne/powerline-go
 
 if test (random 1 20) -lt 2
   echo 'updating powerline ...'
