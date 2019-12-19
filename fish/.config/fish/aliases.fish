@@ -25,7 +25,11 @@ aalias dc 'docker-compose'
 aalias rrr 'bin/rails routes | rg'
 
 function gcob
-  git checkout (git for-each-ref --sort=committerdate refs/heads --format='%(refname:short)' | tail -r | fzf --height=30% --reverse --no-mouse)
+  git checkout (gbl)
+end
+
+function gbl
+  git for-each-ref --sort=committerdate refs/heads --format='%(refname:short)' | tail -r | fzf --height=30% --reverse --no-mouse
 end
 
 function gcostmp
