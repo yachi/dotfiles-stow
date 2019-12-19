@@ -1,3 +1,10 @@
+if test -n "$DEFAULT_PATH"
+else
+  set -gx DEFAULT_PATH $PATH
+end
+
+set -gx PATH $DEFAULT_PATH
+
 # locale
 set -gx LC_ALL en_US.UTF-8
 set -gx LANG en_US.UTF-8
