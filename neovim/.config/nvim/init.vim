@@ -10,8 +10,6 @@ Plug 'mhinz/vim-startify'
 Plug 'sonph/onehalf', {'rtp': 'vim'}
 Plug 'vim-airline/vim-airline'
 Plug 'ryanoasis/vim-devicons'
-Plug '/usr/local/opt/fzf'
-Plug 'junegunn/fzf.vim'
 Plug 'justinmk/vim-sneak'
 Plug 'tpope/vim-surround'
 Plug 'rhysd/clever-f.vim'
@@ -37,7 +35,13 @@ Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-rails'
 Plug 'janko/vim-test'
 Plug 'sheerun/vim-polyglot'
-Plug 'tfnico/vim-gradle'
+
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'liuchengxu/vista.vim'
+
+Plug 'jesseleite/vim-agriculture'
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
 
 call plug#end()
 
@@ -53,7 +57,8 @@ let test#strategy = 'basic'
 
 nnoremap <Leader> :GFiles<CR>
 nnoremap <Leader>f :Files<CR>
-nnoremap <Leader>/ :Rg<Space>
+nmap <Leader>/ <Plug>RgRawSearch
+vmap <Leader>/ <Plug>RgRawVisualSelection
 command! Q :q
 
 " ale linting
