@@ -31,6 +31,11 @@ source ~/.config/fish/aliases.fish
 # fish prompt
 source ~/.config/fish/powerline.fish
 
+# gcloud
+if test -f /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.fish.inc
+  source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.fish.inc
+end
+
 # install fisher
 # which -s fisher; or curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish; and fisher
 
