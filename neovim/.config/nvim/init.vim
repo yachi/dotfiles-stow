@@ -36,9 +36,6 @@ Plug 'tpope/vim-rails'
 Plug 'janko/vim-test'
 Plug 'sheerun/vim-polyglot'
 
-Plug 'ludovicchabant/vim-gutentags'
-Plug 'liuchengxu/vista.vim'
-
 Plug 'jesseleite/vim-agriculture'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
