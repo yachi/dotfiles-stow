@@ -3,6 +3,7 @@ function aalias
 end
 
 aalias v 'nvim -o'
+aalias nf 'nvim -o (fzf)'
 
 aalias g git
 aalias gst 'git status'
