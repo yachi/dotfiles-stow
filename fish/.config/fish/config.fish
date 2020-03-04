@@ -25,6 +25,9 @@ set -gx PATH "$HOME/.local/bin" $PATH
 # editor
 set -gx EDITOR nvim
 
+# make jobs
+set -gx MAKEFLAGS -j(nproc)
+
 # fish alias
 source ~/.config/fish/aliases.fish
 

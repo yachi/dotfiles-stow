@@ -50,7 +50,7 @@ colorscheme onehalfdark
 let g:airline_theme = 'onehalfdark'
 let test#strategy = 'basic'
 
-nnoremap <Leader> :GFiles<CR>
+nnoremap <Leader><Leader> :GFiles ':!changelog*'<CR>
 nnoremap <Leader>f :Files<CR>
 nmap <Leader>/ <Plug>RgRawSearch
 vmap <Leader>/ <Plug>RgRawVisualSelection
