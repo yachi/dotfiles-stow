@@ -7,7 +7,7 @@ aalias nf 'nvim -o (fzf)'
 
 aalias g git
 aalias gst 'git status'
-aalias gc 'git commit -v'
+aalias gc 'gitmoji -c'
 aalias gco 'git checkout'
 aalias gca 'git commit -a'
 aalias gd 'git diff'
@@ -31,6 +31,10 @@ end
 
 function gbl
   git for-each-ref --sort=committerdate refs/heads --format='%(refname:short)' | tail -r | fzf --height=30% --reverse --no-mouse
+end
+
+function vdc
+  nvim -o (git diff --cached --name-only | fzf)
 end
 
 function gcostmp

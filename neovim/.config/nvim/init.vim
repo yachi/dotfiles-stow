@@ -28,12 +28,10 @@ Plug 'wsdjeg/vim-fetch'
 Plug 'kshenoy/vim-signature'
 Plug 'nelstrom/vim-visual-star-search'
 Plug 'tpope/vim-commentary'
-Plug 'junegunn/goyo.vim'
 Plug 'tpope/vim-sleuth'
 
 Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-rails'
-Plug 'janko/vim-test'
 Plug 'sheerun/vim-polyglot'
 
 Plug 'jesseleite/vim-agriculture'
@@ -115,6 +113,4 @@ set shortmess+=c
 " always show signcolumns
 set signcolumn=yes
 
-" Remap for rename current word
-nmap <leader>gg :Goyo<CR>
 " coc end
