@@ -10,7 +10,7 @@ set -gx LC_ALL en_US.UTF-8
 set -gx LANG en_US.UTF-8
 
 # fzf
-set -g FZF_DEFAULT_COMMAND 'rg --files --no-ignore --hidden --follow --glob "!.git/*"'
+set -gx FZF_DEFAULT_COMMAND 'rg --files --no-ignore-vcs --hidden'
 
 # gpg
 set -gx GPG_TTY (tty)

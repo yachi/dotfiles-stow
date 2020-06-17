@@ -14,7 +14,7 @@ Plug 'justinmk/vim-sneak'
 Plug 'tpope/vim-surround'
 Plug 'rhysd/clever-f.vim'
 Plug 'w0rp/ale'
-Plug 'zxqfl/tabnine-vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
@@ -63,7 +63,7 @@ let g:ale_fixers['*'] = ['remove_trailing_lines', 'trim_whitespace']
 let g:ale_fixers.xml = [ 'xmllint']
 let g:ale_fixers.json = [ 'prettier']
 let g:ale_fixers.markdown = ['prettier']
-let g:ale_fixers.shell = ['shellcheck']
+let g:ale_fixers.shell = ['shellcheck', 'shfmt']
 let g:ale_fixers.ruby = [
 			\ 'trim_whitespace',
                         \ 'remove_trailing_lines',

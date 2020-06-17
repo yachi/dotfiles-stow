@@ -3,7 +3,7 @@ function aalias
 end
 
 aalias v 'nvim -o'
-aalias nf 'nvim -o (fzf)'
+aalias nf "nvim -o (fzf)"
 
 aalias g git
 aalias gst 'git status'
@@ -23,6 +23,8 @@ aalias bu 'bundler update'
 
 aalias dc 'docker-compose'
 
+aalias rg "rg --hidden --glob='!.git/*'"
+
 aalias rrr 'bin/rails routes | rg'
 
 function gcob
@@ -39,8 +41,10 @@ end
 
 function gcostmp
   git branch -D stmona
+  git branch -D staging
+  git branch -D sandbox
   git fetch
-  git checkout stmona
+  git checkout stmona; or git checkout staging; or git checkout sandbox
   git merge --no-ff -
   git push
 end
@@ -66,4 +70,21 @@ end
 function gccl
   git add changelog/unreleased/
   git commit -va -m '📝  add changelog item'
+end
+
+function pie
+  sed -i '' "s#$argv[1]#$argv[2]#g" (git grep --name-only $argv[1])
+end
+
+function rsdm
+  set merge_base (git merge-base head $argv[1])
+  set files (git diff $merge_base --name-only (git ls-files 'spec*spec.rb'))
+  echo $files
+  bin/rspec $files
+end
+
+function prdm
+  set merge_base (git merge-base head $argv[1])
+  git diff $merge_base --name-only (git ls-files '*.rb' '*.js')
+  git diff $merge_base --name-only (git ls-files '*.rb' '*.js') | parallel -m yarn prettier --write {}
 end

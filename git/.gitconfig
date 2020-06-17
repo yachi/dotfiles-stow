@@ -1,13 +1,20 @@
 [user]
-	email = yaachi@gmail.com
-	name = Yachi Lo
-	signingkey = 3E8B98920CCA2166
+    email = yaachi@gmail.com
+    name = Yachi Lo
+    signingkey = 3E8B98920CCA2166
 [commit]
-	verbose = true
-	gpgsign = true
+    verbose = true
+    gpgsign = true
 [core]
-	pager = diff-so-fancy | less --tabs=4 -RFX
+    pager = diff-so-fancy | less --tabs=4 -RFX
 [push]
-	default = current
+    default = current
 [diff]
-	algorithm = histogram
+    algorithm = histogram
+    tool = kitty
+    guitool = kitty.gui
+[difftool]
+    prompt = false
+    trustExitCode = true
+[grep]
+    lineNumber = true
