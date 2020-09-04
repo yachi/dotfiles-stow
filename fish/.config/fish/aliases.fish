@@ -9,6 +9,7 @@ aalias g git
 aalias gst 'git status'
 aalias gc 'gitmoji -c'
 aalias gco 'git checkout'
+aalias gcobb 'git checkout -b'
 aalias gca 'git commit -a'
 aalias gd 'git diff'
 aalias gdc 'git diff --cached'
@@ -39,12 +40,16 @@ function vdc
   nvim -o (git diff --cached --name-only | fzf)
 end
 
-function gcostmp
+function gcost
   git branch -D stmona
   git branch -D staging
   git branch -D sandbox
   git fetch
   git checkout stmona; or git checkout staging; or git checkout sandbox
+end
+
+function gcostmp
+  gcost
   git merge --no-ff -
   git push
 end
@@ -85,6 +90,6 @@ end
 
 function prdm
   set merge_base (git merge-base head $argv[1])
-  git diff $merge_base --name-only (git ls-files '*.rb' '*.js')
-  git diff $merge_base --name-only (git ls-files '*.rb' '*.js') | parallel -m yarn prettier --write {}
+  git diff $merge_base --name-only '*.rb' '*.js'
+  git diff $merge_base --name-only '*.rb' '*.js' | parallel -m yarn prettier --write {}
 end
