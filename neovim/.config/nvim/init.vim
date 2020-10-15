@@ -14,7 +14,6 @@ Plug 'justinmk/vim-sneak'
 Plug 'tpope/vim-surround'
 Plug 'rhysd/clever-f.vim'
 Plug 'w0rp/ale'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
@@ -29,6 +28,7 @@ Plug 'kshenoy/vim-signature'
 Plug 'nelstrom/vim-visual-star-search'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-sleuth'
+Plug 'codota/tabnine-vim'
 
 Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-rails'
@@ -93,25 +93,3 @@ set wildmode=list:full
 inoremap jk <Esc>
 
 set clipboard+=unnamedplus
-
-" coc
-" if hidden is not set, TextEdit might fail.
-set nocompatible hidden laststatus=2
-
-" Some servers have issues with backup files, see #649
-set nobackup
-set nowritebackup
-
-" Better display for messages
-set cmdheight=2
-
-" You will have bad experience for diagnostic messages when it's default 4000.
-" set updatetime=300
-
-" don't give |ins-completion-menu| messages.
-set shortmess+=c
-
-" always show signcolumns
-set signcolumn=yes
-
-" coc end
