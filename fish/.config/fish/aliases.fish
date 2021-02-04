@@ -88,8 +88,17 @@ function rsdm
   bin/rspec $files
 end
 
+function rsdb
+  set base_branch (git branch --show-current | string split @)[1]
+  rsdm $base_branch
+end
+
 function prdm
   set merge_base (git merge-base head $argv[1])
   git diff $merge_base --name-only '*.rb' '*.js'
   git diff $merge_base --name-only '*.rb' '*.js' | parallel -m yarn prettier --write {}
+end
+
+function bis
+  brew install (brew search $argv[1] | fzf)
 end

@@ -4,6 +4,7 @@ else
 end
 
 set -gx PATH $DEFAULT_PATH
+set -gx PATH "/usr/local/sbin" $PATH
 
 # locale
 set -gx LC_ALL en_US.UTF-8
@@ -26,7 +27,7 @@ set -gx PATH "$HOME/.local/bin" $PATH
 set -gx EDITOR nvim
 
 # make jobs
-set -gx MAKEFLAGS -j(nproc)
+set -gx MAKEFLAGS -j(/usr/local/bin/nproc)
 
 # fish alias
 source ~/.config/fish/aliases.fish
@@ -45,7 +46,7 @@ end
 # asdf
 switch (uname)
   case Darwin
-    source (brew --prefix asdf)/asdf.fish
+    source (/usr/local/bin/brew --prefix asdf)/asdf.fish
   case Linux
     source /opt/asdf-vm/asdf.fish
 end

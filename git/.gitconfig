@@ -18,3 +18,5 @@
     trustExitCode = true
 [grep]
     lineNumber = true
+[merge]
+	ff = no
