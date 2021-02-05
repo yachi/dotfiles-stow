@@ -33,7 +33,7 @@ function gcob
 end
 
 function gbl
-  git for-each-ref --sort=committerdate refs/heads --format='%(refname:short)' | tail -r | fzf --height=30% --reverse --no-mouse
+  git for-each-ref --sort=committerdate refs/heads --format='%(refname:short)' | tac | fzf --height=30% --reverse --no-mouse
 end
 
 function vdc
@@ -64,12 +64,7 @@ function rslf
 end
 
 function gfpp
-  begin
-    set -lx OVERCOMMIT_DISABLE 1
-    for a in {master,develop}
-      git checkout $a; and git push
-    end; and git push --tags
-  end
+  git push origin develop master --tags
 end
 
 function gccl
@@ -101,4 +96,18 @@ end
 
 function bis
   brew install (brew search $argv[1] | fzf)
+end
+
+function pbcopy
+  wl-copy
+end
+
+function gcf
+  set file "$HOME/.dotfiles/git/$argv[1].gitconfig"
+  set sym "$HOME/.gitconfig"
+  if test -f $file
+    ln -svf $file $sym
+  else
+    echo file not found $file
+  end
 end

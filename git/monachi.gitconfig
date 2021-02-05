@@ -1,0 +1,24 @@
+[user]
+    email = yachi@crypto.com
+    name = Yachi Lo
+    signingkey = 03CEB2E9785F3091
+[commit]
+    verbose = true
+    gpgsign = true
+[core]
+    pager = diff-so-fancy | less --tabs=4 -RFX
+[push]
+    default = current
+[diff]
+    algorithm = histogram
+    tool = kitty
+    guitool = kitty.gui
+[difftool]
+    prompt = false
+    trustExitCode = true
+[grep]
+    lineNumber = true
+[merge]
+	ff = no
+[credential "https://github.com"]
+	helper = !gh auth git-credential

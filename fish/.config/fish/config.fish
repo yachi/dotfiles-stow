@@ -14,7 +14,9 @@ set -gx LANG en_US.UTF-8
 set -gx FZF_DEFAULT_COMMAND 'rg --files --no-ignore-vcs --hidden'
 
 # gpg
-set -gx GPG_TTY (tty)
+set -x GPG_TTY (tty)
+set -x SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
+gpgconf --launch gpg-agent
 
 # go lang
 set -gx GOPATH "$HOME/go"
@@ -27,7 +29,12 @@ set -gx PATH "$HOME/.local/bin" $PATH
 set -gx EDITOR nvim
 
 # make jobs
-set -gx MAKEFLAGS -j(/usr/local/bin/nproc)
+switch (uname)
+  case Darwin
+    set -gx MAKEFLAGS -j(/usr/local/bin/nproc)
+  case Linux
+    set -gx MAKEFLAGS -j(/usr/bin/nproc)
+end
 
 # fish alias
 source ~/.config/fish/aliases.fish
