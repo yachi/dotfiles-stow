@@ -33,7 +33,7 @@ function gcob
 end
 
 function gbl
-  git for-each-ref --sort=committerdate refs/heads --format='%(refname:short)' | tac | fzf --height=30% --reverse --no-mouse
+  git for-each-ref --sort=committerdate refs/HEADs --format='%(refname:short)' | tac | fzf --height=30% --reverse --no-mouse
 end
 
 function vdc
@@ -58,9 +58,13 @@ function gmdd
   git branch --merged | grep -v develop | grep -v master | xargs git branch -d
 end
 
+function gdmb
+  git diff (git merge-base HEAD develop)
+end
+
 function rslf
   git ls-files | grep -E "^spec/.*($argv[1]).*_spec\.rb\$"
-  env RAILS_ENV=test bin/rspec (git ls-files | grep -E "^spec/.*($argv[1]).*_spec\.rb\$")
+  env RAILS_ENV=test bin/rspec --fail-fast (git ls-files | grep -E "^spec/.*($argv[1]).*_spec\.rb\$")
 end
 
 function gfpp
@@ -77,7 +81,7 @@ function pie
 end
 
 function rsdm
-  set merge_base (git merge-base head $argv[1])
+  set merge_base (git merge-base HEAD $argv[1])
   set files (git diff $merge_base --name-only (git ls-files 'spec*spec.rb'))
   echo $files
   bin/rspec $files
@@ -89,7 +93,7 @@ function rsdb
 end
 
 function prdm
-  set merge_base (git merge-base head $argv[1])
+  set merge_base (git merge-base HEAD $argv[1])
   git diff $merge_base --name-only '*.rb' '*.js'
   git diff $merge_base --name-only '*.rb' '*.js' | parallel -m yarn prettier --write {}
 end
