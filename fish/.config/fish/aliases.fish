@@ -28,6 +28,8 @@ aalias rg "rg --hidden --glob='!.git/*'"
 
 aalias rrr 'bin/rails routes | rg'
 
+aalias nd 'nvim ~/.dotfiles'
+
 function gcob
   git checkout (gbl)
 end
