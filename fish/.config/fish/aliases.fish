@@ -35,7 +35,7 @@ function gcob
 end
 
 function gbl
-  git for-each-ref --sort=committerdate refs/HEADs --format='%(refname:short)' | tac | fzf --height=30% --reverse --no-mouse
+  git branch --sort=-committerdate | sed 's#..##' | fzf --height=30% --reverse --no-mouse
 end
 
 function vdc
