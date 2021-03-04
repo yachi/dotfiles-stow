@@ -61,10 +61,11 @@ let g:airline#extensions#ale#enabled = 1
 let g:ale_fixers = {}
 let g:ale_fixers['*'] = ['remove_trailing_lines', 'trim_whitespace']
 let g:ale_fixers.xml = [ 'xmllint']
-let g:ale_fixers.yaml = [ 'prettier']
-let g:ale_fixers.json = [ 'prettier']
+let g:ale_fixers.html = ['prettier']
+let g:ale_fixers.yaml = ['prettier']
+let g:ale_fixers.json = ['prettier']
 let g:ale_fixers.markdown = ['prettier']
-let g:ale_fixers.shell = ['shellcheck', 'shfmt']
+let g:ale_fixers.sh = ['shfmt']
 let g:ale_fixers.ruby = [
 			\ 'trim_whitespace',
                         \ 'remove_trailing_lines',
