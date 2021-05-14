@@ -7,6 +7,7 @@ aalias nf "nvim -o (fzf)"
 
 aalias g git
 aalias gst 'git status'
+aalias gs 'git status -s'
 aalias gc 'gitmoji -c'
 aalias gco 'git checkout'
 aalias gcobb 'git checkout -b'
@@ -61,7 +62,7 @@ function gmdd
 end
 
 function gdmb
-  git diff (git merge-base HEAD develop)
+  git diff (git merge-base HEAD $argv[1]) $argv[2]
 end
 
 function rslf
@@ -79,7 +80,8 @@ function gccl
 end
 
 function pie
-  sed -i '' "s#$argv[1]#$argv[2]#g" (git grep --name-only $argv[1])
+  git grep --name-only $argv[1]
+  perl -p -i -e "s#$argv[1]#$argv[2]#g" (git grep --name-only $argv[1])
 end
 
 function rsdm

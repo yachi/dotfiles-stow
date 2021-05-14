@@ -3,7 +3,7 @@ else
   set -gx DEFAULT_PATH $PATH
 end
 
-set XDG_CURRENT_DESKTOP sway
+# set XDG_CURRENT_DESKTOP sway
 
 set -gx PATH $DEFAULT_PATH
 set -gx PATH "/usr/local/sbin" $PATH
