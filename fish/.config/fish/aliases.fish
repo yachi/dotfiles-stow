@@ -22,6 +22,7 @@ aalias gunwip 'git log -n 1 | grep -q -c wip; and git reset HEAD~1'
 
 aalias bi 'bundler install -j256'
 aalias bu 'bundler update'
+aalias be 'bundle exec'
 
 aalias dc 'docker-compose'
 
