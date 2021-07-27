@@ -6,7 +6,7 @@
     verbose = true
     gpgsign = true
 [core]
-    pager = diff-so-fancy | less --tabs=4 -RFX
+    pager = delta
 [push]
     default = current
 [diff]
@@ -19,4 +19,4 @@
 [grep]
     lineNumber = true
 [merge]
-	ff = no
+	  ff = no

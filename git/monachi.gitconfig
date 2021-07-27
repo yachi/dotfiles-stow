@@ -1,7 +1,7 @@
 [user]
     email = yachi@crypto.com
     name = Yachi Lo
-    signingkey = 3E8B98920CCA2166
+    signingkey = 6A0504CD4540A200
 [commit]
     verbose = true
     gpgsign = true
