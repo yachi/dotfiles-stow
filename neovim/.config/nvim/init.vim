@@ -38,6 +38,8 @@ Plug 'jesseleite/vim-agriculture'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 
+Plug 'wfxr/minimap.vim'
+
 call plug#end()
 
 " PlugUpgrade
@@ -66,6 +68,7 @@ let g:ale_fixers.yaml = ['prettier']
 let g:ale_fixers.json = ['prettier']
 let g:ale_fixers.markdown = ['prettier']
 let g:ale_fixers.sh = ['shfmt']
+let g:ale_fixers.sql = ['pgformatter']
 let g:ale_fixers.ruby = [
 			\ 'trim_whitespace',
                         \ 'remove_trailing_lines',
@@ -80,6 +83,9 @@ let g:picker_custom_find_executable = 'rg'
 let g:picker_custom_find_flags = '--color never --files --hidden'
 
 let g:indent_guides_enable_on_vim_startup = 1
+
+" let minimap
+let g:minimap_auto_start = 1
 
 set autoread
 
